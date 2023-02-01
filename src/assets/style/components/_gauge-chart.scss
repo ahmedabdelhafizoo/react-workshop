@@ -1,0 +1,39 @@
+.gauge-chart {
+  text-align: center;
+  &__title {
+    margin-bottom: 5px;
+  }
+  svg {
+    width: 140px;
+    height: 140px;
+    path {
+      stroke: color(red);
+      &:last-of-type {
+        stroke: #46476e;
+        stroke-width: 23.2px;
+      }
+    }
+    .needle path {
+      fill: color(light);
+      stroke: color(light);
+      stroke-width: initial;
+    }
+  }
+  &__wrapper {
+    height: 70px;
+  }
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    span {
+      padding: 2px 8px 0;
+      position: relative;
+      top: -1px;
+      background: color(primary);
+    }
+    small {
+      font-size: 0.7em;
+    }
+  }
+}

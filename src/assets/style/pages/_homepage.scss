@@ -1,0 +1,125 @@
+.stats {
+  margin: 20px auto;
+
+  &__row {
+    display: grid;
+    grid-template-columns: 470px auto;
+    gap: 15px;
+
+    &:not(:last-of-type) {
+      margin-bottom: 15px;
+    }
+
+    @media screen and (max-width: 1100px) {
+      grid-template-columns: 100%;
+    }
+  }
+
+  &__card {
+    padding: 15px;
+    background: color(primary);
+    border-radius: 8px;
+
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+
+    &__title {
+      font-size: 15px;
+
+      &+div {
+        min-height: auto !important;
+      }
+    }
+
+    &__row {
+      margin-top: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 15px 30px;
+
+      &__item:not(:first-of-type) {
+        margin-inline: auto;
+        @media screen and (max-width: 1100px) {
+          margin: 0;
+        }
+      }
+
+      &.no-margin {
+        margin-top: 0;
+        align-items: center;
+      }
+    }
+
+    &__value {
+      font-size: 38px;
+
+      &--sm {
+        font-size: 20px;
+      }
+
+      small {
+        font-size: .6em;
+      }
+    }
+
+    &__desc {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    &__indicator {
+      font-size: 14px;
+      color: color(green);
+      display: flex;
+
+      &::before {
+        content: "";
+        border-width: 0 4px 6px;
+        border-style: solid;
+        border-color: transparent transparent color(green);
+        align-self: center;
+        margin-right: 5px;
+      }
+
+      small {
+        font-size: .7em;
+        align-self: flex-end;
+      }
+
+      &.down {
+        color: color(red);
+
+        &::before {
+          border-top-color: var(--red-color);
+          border-width: 6px 4px 0;
+        }
+      }
+    }
+
+    .gauge-chart {
+      margin-top: -40px;
+      @media screen and (max-width: 1100px) {
+        margin-top: 0;
+      }
+    }
+
+    .apexcharts-canvas {
+      margin-left: -15px;
+      width: 100% !important;
+
+      line {
+        opacity: .2;
+      }
+
+      .apexcharts-text tspan {
+        fill: color(light);
+      }
+
+      >svg {
+        background: transparent !important;
+      }
+    }
+  }
+}
